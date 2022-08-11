@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.14715719063545152" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller2">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="73.0">
+         <children>
+            <Pane fx:id="editpane" prefHeight="398.0" prefWidth="85.0">
+               <children>
+                  <Button fx:id="rotateR" layoutX="10.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#rotateRView" prefHeight="25.0" prefWidth="65.0" text="RotateR" />
+                  <Button fx:id="rotateL" layoutX="10.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#rotateLView" prefHeight="25.0" prefWidth="65.0" text="RotateL" />
+                  <Button fx:id="mirrorH" layoutX="10.0" layoutY="71.0" mnemonicParsing="false" onMouseClicked="#mirrorHView" prefHeight="25.0" prefWidth="65.0" text="MirrorH" />
+                  <Button fx:id="mirrorV" layoutX="10.0" layoutY="96.0" mnemonicParsing="false" onMouseClicked="#mirrorVView" prefHeight="25.0" prefWidth="65.0" text="MirrorV" />
+                  <Button fx:id="sepia" layoutX="10.0" layoutY="121.0" mnemonicParsing="false" onMouseClicked="#sepiaView" prefHeight="25.0" prefWidth="65.0" text="Sepia" />
+                  <Button layoutX="10.0" layoutY="146.0" mnemonicParsing="false" onMouseClicked="#noiseView" prefHeight="25.0" prefWidth="65.0" text="Noise" />
+                  <Label layoutX="8.0" layoutY="171.0" prefHeight="25.0" prefWidth="65.0" text="    Contrast " />
+                  <Button fx:id="contrastP" layoutX="14.0" layoutY="196.0" mnemonicParsing="false" onMouseClicked="#contrastUP" text="+" />
+                  <Button fx:id="contrastL" layoutX="52.0" layoutY="196.0" mnemonicParsing="false" onMouseClicked="#contrastDown" prefHeight="25.0" prefWidth="24.0" text="-" />
+                  <Button fx:id="resetB" layoutX="11.0" layoutY="359.0" mnemonicParsing="false" onMouseClicked="#resetImage" prefHeight="25.0" prefWidth="59.0" text="Reset" />
+                  <Label layoutX="12.0" layoutY="273.0" prefHeight="25.0" prefWidth="59.0" text="   Zoom" />
+                  <Button layoutX="14.0" layoutY="298.0" mnemonicParsing="false" text="+" />
+                  <Button layoutX="43.0" layoutY="298.0" mnemonicParsing="false" text="-" />
+               </children>
+            </Pane>
+            <Pane fx:id="slideshowpane" prefHeight="398.0" prefWidth="85.0" visible="false">
+               <children>
+                  <Button layoutX="30.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#nextImage" text="&gt;" />
+               </children></Pane>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="507.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#loadImage" text="New " />
+                        <Menu mnemonicParsing="false" text="Save">
+                          <items>
+                            <MenuItem fx:id="Save" mnemonicParsing="false" onAction="#Save" text="Save" />
+                              <MenuItem fx:id="saveAs" mnemonicParsing="false" onAction="#SaveAs" text="Save As" />
+                          </items>
+                        </Menu>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="View">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showSlideShow" text="SlideShow" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ScrollPane layoutX="6.0" layoutY="29.0" prefHeight="371.0" prefWidth="490.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+              </content>
+            </ScrollPane>
+            <ImageView fx:id="im" fitHeight="360.0" fitWidth="481.0" layoutX="9.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
